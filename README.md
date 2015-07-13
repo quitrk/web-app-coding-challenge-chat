@@ -1,8 +1,7 @@
-# app-jobs-post-process-worker
-Worker that post processes new jobs (e.g. clean, fill in geo information, estimate prices and store them in the db)
+# Web App Coding Challenge Chat
 
+The task is to refactor this web application with angular. Use bootstrap or any other UI library if you see fit.
 
-Environment Variables:
-- GM_GEOCODER_API_KEY
-- DISPATCHER_MONGODB_CONNECTION_STRING
-- DISPATCHER_AMQP_URL
+## Real Time
+
+New Chat messages are also published with Pusher(https://pusher.com/) on the channel 'chat-messages' with the event 'new_message'. Use the key "be0cb4958ed00f849ac9" to establish a connection to our Pusher server.
