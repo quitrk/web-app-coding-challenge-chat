@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<title>Refactor me!</title>
+		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<script>
+			function DoIt() {
+				$.post('http://coding-challenges.dispatchertrucking.com:8080/chat-messages', {user: 'MySelf', text: $('#B').val()});
+			}
+			var lastTime=null;
+			setInterval(function() {
+				$.get('http://coding-challenges.dispatchertrucking.com:8080/chat-messages', function(data) {
+					data.forEach(function(d) {
+						if(!lastTime || d.time > lastTime) {
+						$('#A').val($('#A').val() + '\n' + d.user + ': ' + d.text);
+						lastTime = d.time;
+						}
+					});
+				});
+			}, 5000);
+		</script>
+	</head>
+	<body>
+	<textarea id="A" style="width: 500px; height: 500px;"></textarea>
+	</br>
+	<input type="text" id="B"/>
+	<button onclick="DoIt();">Send!</button>
+	</body>
+</html>
