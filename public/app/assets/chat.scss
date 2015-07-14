@@ -1,0 +1,34 @@
+.chat {
+  .conversation {
+    background: white;
+    height: 400px;
+    max-height: 400px;
+    color: black;
+    overflow-y: auto;
+    list-style: none;
+    padding: 5px 10px;
+
+    .conversation .time {
+      color: #127891;
+      font-size: 12px;
+    }
+
+    .conversation .user {
+      font-weight: 600;
+    }
+  }
+
+  .chat-toolbox {
+      margin-top: 5px;
+
+    button {
+      width: 100px;
+      margin-left: 5px;
+    }
+
+    input {
+      width: calc(100% - 105px);
+    }
+  }
+}
+

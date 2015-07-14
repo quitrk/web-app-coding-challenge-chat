@@ -1,0 +1,11 @@
+@import '../../bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap';
+@import 'chat';
+
+body {
+    background: #222;
+}
+
+#main-container {
+    width: 500px;
+    margin: 30px auto;
+}
