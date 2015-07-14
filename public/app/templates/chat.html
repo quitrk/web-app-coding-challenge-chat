@@ -1,0 +1,30 @@
+<div class="form-group chat" name="chatForm">
+  <ul class="conversation">
+    <li ng-repeat="message in messages track by $index">
+      <span class="time" moment-formatter="{{message.time}}"></span>
+      <span class="user" ng-if="message.user">
+        {{message.user}}
+      </span>
+      <span class="user" ng-if="!message.user">
+        (Anonymous)
+      </span>
+      <span class="message">{{message.text}}</span>
+    </li>
+  </ul>
+
+  <div class="chat-toolbox">
+    <input type="text" 
+           class="form-control pull-left"
+           placeholder="Enter your message..."
+           ng-model="message"
+           ng-enter="sendMessage()"
+           name="messageInput">
+    </input>
+
+    <button type="button"
+            class="btn btn-primary pull-left"
+            ng-click="sendMessage()"
+            ng-disabled="!message">Send
+    </button>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+{
+  "name": "public",
+  "version": "0.0.1",
+  "homepage": "https://github.com/quitrk/web-app-coding-challenge-chat",
+  "authors": [
+    "Tudor Potecaru <quitrk@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.2",
+    "jquery": "~2.1.4",
+    "angular-route": "~1.4.2",
+    "angular-resource": "~1.4.2",
+    "bootstrap": "~3.3.5",
+    "angular-pusher": "~0.0.14",
+    "angular-moment": "~0.10.1",
+    "underscore": "~1.8.3"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.4.2"
+  }
+}

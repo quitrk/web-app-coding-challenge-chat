@@ -1,28 +1,32 @@
 <html>
-	<head>
-		<title>Refactor me!</title>
-		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-		<script>
-			function DoIt() {
-				$.post('http://coding-challenges.dispatchertrucking.com:8080/chat-messages', {user: 'MySelf', text: $('#B').val()});
-			}
-			var lastTime=null;
-			setInterval(function() {
-				$.get('http://coding-challenges.dispatchertrucking.com:8080/chat-messages', function(data) {
-					data.forEach(function(d) {
-						if(!lastTime || d.time > lastTime) {
-						$('#A').val($('#A').val() + '\n' + d.user + ': ' + d.text);
-						lastTime = d.time;
-						}
-					});
-				});
-			}, 5000);
-		</script>
-	</head>
-	<body>
-	<textarea id="A" style="width: 500px; height: 500px;"></textarea>
-	</br>
-	<input type="text" id="B"/>
-	<button onclick="DoIt();">Send!</button>
-	</body>
+<head>
+    <meta charset="utf-8">
+    <title>Pusher Chat</title>
+
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="app/assets/styles.css"/>
+    <link rel="stylesheet" href="app/assets/chat.css"/>
+</head>
+
+<body>
+    <div ng-app="chatApp" id="main-container">
+        <div ng-view></div>
+    </div>
+
+    <!-- Bower Components -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-pusher/angular-pusher.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/angular-moment/angular-moment.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
+
+    <!-- JavaScript -->
+    <script src="app/js/app.js"></script>
+    <script src="app/js/directives.js"></script>
+    <script src="app/js/services.js"></script>
+    <script src="app/js/controllers.js"></script>
+</body>
 </html>
