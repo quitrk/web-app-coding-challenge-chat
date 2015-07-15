@@ -11,7 +11,7 @@
         scope: {},
         link: function(scope, elem, attr) {
           if (attr.momentFormatter) {
-            elem.text(moment(parseInt(attr.momentFormatter)).startOf('minute').fromNow());
+            elem.text(moment(parseInt(attr.momentFormatter)).calendar());
           }
         }
       };
